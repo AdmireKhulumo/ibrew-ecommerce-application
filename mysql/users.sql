@@ -1,0 +1,10 @@
+insert into users (username, email, password, role, created_at) values ('Tessi Brydon', 'tbrydon0@macromedia.com', 'iP3*S\1"r}K"n0S{', 'admin', '22/03/2024');
+insert into users (username, email, password, role, created_at) values ('Ailyn Dance', 'adance1@gravatar.com', 'nC1.)|TO{%3T', 'buyer', '05/03/2024');
+insert into users (username, email, password, role, created_at) values ('Zandra Wyrall', 'zwyrall2@surveymonkey.com', 'pZ8a<12.AfS3S|)0', 'buyer', '12/08/2023');
+insert into users (username, email, password, role, created_at) values ('Finn Jaffrey', 'fjaffrey3@ebay.co.uk', 'fM5iP|ML"?v<<czT', 'buyer', '01/09/2023');
+insert into users (username, email, password, role, created_at) values ('Willey Lindner', 'wlindner4@craigslist.org', 'eM117$NxCL1Vy', 'buyer', '25/09/2023');
+insert into users (username, email, password, role, created_at) values ('Osbert Baumford', 'obaumford5@wordpress.com', 'mO12Rv?#|', 'buyer', '12/02/2024');
+insert into users (username, email, password, role, created_at) values ('Jabez Moulsdall', 'jmoulsdall6@geocities.com', 'sG3D%?y#', 'buyer', '08/02/2024');
+insert into users (username, email, password, role, created_at) values ('Beilul Olech', 'bolech7@japanpost.jp', 'gS7Ej$l#>UGlCK', 'buyer', '06/04/2024');
+insert into users (username, email, password, role, created_at) values ('Brodie Dooler', 'bdooler8@comsenz.com', 'oK4.L|.,9wg', 'buyer', '30/06/2023');
+insert into users (username, email, password, role, created_at) values ('Hana Sandey', 'hsandey9@altervista.org', 'vY3!6n7Le)C~', 'buyer', '06/01/2024');

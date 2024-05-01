@@ -85,10 +85,10 @@
             <ul>
                 <li>
                     <div class="cart-sidebar-left">
-                        <a class="cart-sidebar-img" href="product-single.html"><img src="assets/images/drink-1.png" alt="Wine Bottle"></a>
+                        <a class="cart-sidebar-img" href="product-single.php"><img src="assets/images/drink-1.png" alt="Wine Bottle"></a>
                     </div>
                     <div class="cart-sidebar-right">
-                        <a title="Amarula Morula Deligh" href="product-single.html">Amarula Morula Delight</a>
+                        <a title="Amarula Morula Deligh" href="product-single.php">Amarula Morula Delight</a>
                         <div class="cart-product-price"><span>1&nbsp;×</span><span>BWP480</span></div>
                     </div>
                     <div class="product-remove">
@@ -104,10 +104,10 @@
                 </li>
                 <li>
                     <div class="cart-sidebar-left">
-                        <a class="cart-sidebar-img" href="product-single.html"><img src="assets/images/drink-2.png" alt="Wine Bottle"></a>
+                        <a class="cart-sidebar-img" href="product-single.php"><img src="assets/images/drink-2.png" alt="Wine Bottle"></a>
                     </div>
                     <div class="cart-sidebar-right">
-                        <a title="Mirassou Vineyards" href="product-single.html">Mirassou Vineyards</a>
+                        <a title="Mirassou Vineyards" href="product-single.php">Mirassou Vineyards</a>
                         <div class="cart-product-price"><span>1&nbsp;×</span><span>BWP370</span></div>
                     </div>
                     <div class="product-remove">
@@ -220,7 +220,7 @@
                             </a>
                                 <span class="for-mob dropdown-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
                                 <ul class="sub-menu">
-                                    <li><a title="Shop" href="shop.html">Shop</a></li>
+                                    <li><a title="Shop" href="shop.php">Shop</a></li>
 <!--                                    <li><a title="Product Single" href="product-single.html">Product Single</a></li>-->
 <!--                                    <li><a title="Categories" href="categories.html">Categories</a></li>-->
 <!--                                    <li><a title="Single Category" href="single-category.html">Single Category</a></li>-->
@@ -274,7 +274,7 @@
                                     <div class="banner-text">
                                         <h1 class="h1-title">Amarula Morula Delight</h1>
                                         <div class="banner-btn">
-                                            <a href="product-single.html" title="Explore more" class="sec-btn">Explore more
+                                            <a href="product-single.php" title="Explore more" class="sec-btn">Explore more
                                                 <svg width="30" height="15" viewBox="0 0 30 15" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -351,276 +351,7 @@
     <!-- End of About Us Section-->
 
     <!-- Start of Product Section-->
-    <section class="section product-section fluid-section">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="sec-title text-center mb-5">
-                    <h3 class="sec-title-number">02</h3>
-                    <h2 class="h2-title">The Finest Collection of Morula Beverages</h2>
-                    <div class="sec-title-shape">
-                        <img src="assets/images/title-shape.svg" alt="Title Shape">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-row position-relative">
-            <div class="row g-0">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-box">
-                        <div class="product-box-shape">
-                            <img src="assets/images/product-box-shape.png" alt="Product Box Shape">
-                        </div>
-                        <div class="underline-text underline-top"></div>
-                        <div class="underline-text underline-bottom"></div>
-                        <div class="underline-text underline-left"></div>
-                        <div class="underline-text underline-right"></div>
-                        <div class="product-box-img text-center">
-                            <a href="product-single.html" title="Wine Bottle">
-                                <img src="assets/images/drink-1.png" alt="Wine Bottle">
-                            </a>
-                        </div>
-                        <div class="product-box-info">
-                            <p class="h3-title"><a href="product-single.html" title="Amarula Morula Delight">Amarula Morula Delight</a></p>
-                        </div>
-                        <div class="ani-line"></div>
-                        <div class="product-box-bottom">
-                            <h3 class="product-box-price">
-                                BWP480
-                            </h3>
-
-                            <a href="javascript:void(0);" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                            fill="#003049" />
-                                    </svg>
-
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;" />
-                                        </svg>
-
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-box">
-                        <div class="product-box-shape">
-                            <img src="assets/images/product-box-shape.png" alt="Product Box Shape">
-                        </div>
-                        <div class="underline-text underline-top"></div>
-                        <div class="underline-text underline-bottom"></div>
-                        <div class="underline-text underline-left"></div>
-                        <div class="underline-text underline-right"></div>
-                        <div class="product-box-img text-center">
-                            <a href="product-single.html" title="Wine Bottle">
-                                <img src="assets/images/drink-2.png" alt="Wine Bottle">
-                            </a>
-                        </div>
-                        <div class="product-box-info">
-                            <p class="h3-title"><a href="product-single.html" title="Mirassou Vineyards">Morula Strawberry</a></p>
-                        </div>
-                        <div class="ani-line"></div>
-                        <div class="product-box-bottom">
-                            <h3 class="product-box-price">
-                                BWP370
-                            </h3>
-
-                            <a href="javascript:void();" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                            fill="#003049" />
-                                    </svg>
-
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;" />
-                                        </svg>
-
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-box">
-                        <div class="product-box-shape">
-                            <img src="assets/images/product-box-shape.png" alt="Product Box Shape">
-                        </div>
-                        <div class="underline-text underline-top"></div>
-                        <div class="underline-text underline-bottom"></div>
-                        <div class="underline-text underline-left"></div>
-                        <div class="underline-text underline-right"></div>
-                        <div class="product-box-img text-center">
-                            <a href="product-single.html" title="Wine Bottle">
-                                <img src="assets/images/drink-3.png" alt="Wine Bottle">
-                            </a>
-                        </div>
-                        <div class="product-box-info">
-                            <p class="h3-title"><a href="product-single.html" title="Emidio Pepe Trebbiano">Morula Fruit Juice</a></p>
-                        </div>
-                        <div class="ani-line"></div>
-                        <div class="product-box-bottom">
-                            <h3 class="product-box-price">
-                                BWP170
-                            </h3>
-
-                            <a href="javascript:void();" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                            fill="#003049" />
-                                    </svg>
-
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;" />
-                                        </svg>
-
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-box">
-                        <div class="product-box-shape">
-                            <img src="assets/images/product-box-shape.png" alt="Product Box Shape">
-                        </div>
-                        <div class="underline-text underline-top"></div>
-                        <div class="underline-text underline-bottom"></div>
-                        <div class="underline-text underline-left"></div>
-                        <div class="underline-text underline-right"></div>
-                        <div class="product-box-img text-center">
-                            <a href="product-single.html" title="Wine Bottle">
-                                <img src="assets/images/drink-4.png" alt="Wine Bottle">
-                            </a>
-                        </div>
-                        <div class="product-box-info">
-                            <p class="h3-title"><a href="product-single.html" title="Beringer Knights Valley">Amarula Sunrise</a></p>
-                        </div>
-                        <div class="ani-line"></div>
-                        <div class="product-box-bottom">
-                            <h3 class="product-box-price">
-                                BWP380
-                            </h3>
-
-                            <a href="javascript:void();" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                            fill="#003049" />
-                                    </svg>
-
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;" />
-                                        </svg>
-
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-box">
-                        <div class="product-box-shape">
-                            <img src="assets/images/product-box-shape.png" alt="Product Box Shape">
-                        </div>
-                        <div class="underline-text underline-top"></div>
-                        <div class="underline-text underline-bottom"></div>
-                        <div class="underline-text underline-left"></div>
-                        <div class="underline-text underline-right"></div>
-                        <div class="product-box-img text-center">
-                            <a href="product-single.html" title="Wine Bottle">
-                                <img src="assets/images/drink-5.png" alt="Wine Bottle">
-                            </a>
-                        </div>
-                        <div class="product-box-info">
-                            <p class="h3-title"><a href="product-single.html" title="Josh Cellars">Morula Cider</a></p>
-                        </div>
-                        <div class="ani-line"></div>
-                        <div class="product-box-bottom">
-                            <h3 class="product-box-price">
-                                BWP210
-                            </h3>
-
-                            <a href="javascript:void();" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                            fill="#003049" />
-                                    </svg>
-
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;" />
-                                        </svg>
-
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="product-box">
-                        <div class="product-box-shape">
-                            <img src="assets/images/product-box-shape.png" alt="Product Box Shape">
-                        </div>
-                        <div class="underline-text underline-top"></div>
-                        <div class="underline-text underline-bottom"></div>
-                        <div class="underline-text underline-left"></div>
-                        <div class="underline-text underline-right"></div>
-                        <div class="product-box-img text-center">
-                            <a href="product-single.html" title="Wine Bottle">
-                                <img src="assets/images/drink-6.png" alt="Wine Bottle">
-                            </a>
-                        </div>
-                        <div class="product-box-info">
-                            <p class="h3-title"><a href="product-single.html" title="Louis Benjamin">Amarula Morula Pack</a></p>
-                        </div>
-                        <div class="ani-line"></div>
-                        <div class="product-box-bottom">
-                            <h3 class="product-box-price">
-                                BWP749
-                            </h3>
-
-                            <a href="javascript:void();" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                            fill="#003049" />
-                                    </svg>
-
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;" />
-                                        </svg>
-
-                                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include __DIR__."/products.php"; ?>
     <!-- End of Product Section-->
 
     <!-- Start of Two Col Section-->
@@ -883,7 +614,7 @@
                     <div class="shop-now-text">
                         <h2 class="xl-title">Enjoy the perfect Morula drink!</h2>
                         <div class="shop-now-btn">
-                            <a href="shop.html" title="Shop Now" class="sec-btn">
+                            <a href="shop.php" title="Shop Now" class="sec-btn">
                                 Shop Now
                                 <svg width="30" height="15" viewBox="0 0 30 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -944,7 +675,7 @@
                                         <a title="About" href="about.html">About</a>
                                     </li>
                                     <li>
-                                        <a title="Menu" href="shop.html">Shop</a>
+                                        <a title="Menu" href="shop.php">Shop</a>
                                     </li>
                                     <li>
                                         <a title="Contact" href="contact.html">Contact</a>

@@ -1,14 +1,14 @@
 <?php
 
 // for debug logging
-require '../vendor/autoload.php';		// If installed via composer
+include __DIR__."/../vendor/autoload.php";
 $debug = new \bdk\Debug(array(
     'collect' => true,
     'output' => true,
 ));
 
 // accessing environment variables
-$env = parse_ini_file('../.env');
+$env = parse_ini_file(__DIR__."/../.env");
 
 function debug_log($value): void
 {
