@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-login'])){
             debug_log("Password correct.");
             echo "Password okay";
             // TODO: set the user session here
-            redirect("index");
+            redirect("index.php");
         }
     }
 

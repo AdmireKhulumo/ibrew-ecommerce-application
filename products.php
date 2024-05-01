@@ -24,10 +24,10 @@
 
     <!-- Main Style CSS Link -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <?php
-    include __DIR__ . "/php/functions.php";
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    session_start();
+    <?php include __DIR__ . "/php/functions.php"; ?>
+    <?php
 
     // connect to db
     $conn = db_connect();
@@ -37,13 +37,61 @@
     $result = $conn->query($sql);
 
     // store products in the session
-//    $rows = array();
-//    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-//        $rows[] = $row;
-//    }
+    //    $rows = array();
+    //    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+    //        $rows[] = $row;
+    //    }
 
     $conn->close();
     ?>
+
+    <?php
+
+    session_start();
+    debug_log("inside add to cart");
+
+    // Check if form data is submitted
+    if (isset($_POST['add_to_cart'])) {
+        // Get product details from form data
+        $product_id = $_POST['product_id'];
+        $product_name = $_POST['product_name'];
+        $product_price = $_POST['product_price'];
+
+        // Initialize cart if it doesn't exist in session
+        debug_log("session before");
+        debug_log($_SESSION);
+        if (!isset($_SESSION['cart_items'])) {
+            $_SESSION['cart_items'] = array();
+        }
+
+        // Check if the product already exists in the cart
+        if (array_key_exists($product_id, $_SESSION['cart_items'])) {
+            // If product exists, increment the quantity
+            debug_log("product exists in cart");
+            $_SESSION['cart_items'][$product_id]['quantity']++;
+        } else {
+            // If product doesn't exist, add it to the cart
+            debug_log("product not in cart");
+            $_SESSION['cart_items'][$product_id] = array(
+                'name' => $product_name,
+                'price' => floatval($product_price),
+                'quantity' => 1
+            );
+        }
+
+        debug_log("session after");
+        debug_log($_SESSION);
+
+        // Redirect back to the product display page after adding to cart
+    } else {
+        // Redirect back to the product display page with an error message if form data is not set
+        $_SESSION['error_message'] = "Error: Form data is missing.";
+    }
+    //    header("Location: ".$_SERVER['HTTP_REFERER']);
+    //    exit();
+
+    ?>
+
 
 </head>
 <body>
@@ -72,13 +120,14 @@
                         <div class="underline-text underline-left"></div>
                         <div class="underline-text underline-right"></div>
                         <div class="product-box-img text-center">
-                            <a href="product-single.php?id=<?php echo $row['id']?>" title=<?php echo $row['name'] ?>>
+                            <a href="product-single.php?id=<?php echo $row['id'] ?>" title=<?php echo $row['name'] ?>>
                                 <img src="<?php echo $row['url'] ?>" alt=<?php echo $row['name'] ?>>
                             </a>
                         </div>
                         <div class="product-box-info">
                             <p class="h3-title">
-                                <a href="product-single.php?id=<?php echo $row['id']?>" title=<?php echo $row['name'] ?>> <?php echo $row['name'] ?> </a>
+                                <a href="product-single.php?id=<?php echo $row['id'] ?>"
+                                   title=<?php echo $row['name'] ?>> <?php echo $row['name'] ?> </a>
                             </p>
                         </div>
                         <div class="ani-line"></div>
@@ -87,23 +136,38 @@
                                 <?php echo $row['price'] ?>
                             </h3>
 
-                            <!--                    todo: add functionality for adding to cart-->
-                            <a href="javascript:void(0);" class="add-cart-btn" title="Add to cart">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                    <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"
-                                          fill="#003049"/>
-                                </svg>
+<!--                            <div class="add-cart-btn" title="Add to cart">-->
+<!--                                <form action="" method="post">-->
+<!---->
+<!---->
+<!--                                    <input type="submit" class="add-cart-btn" name="add-to-cart">-->
+<!--                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">-->
+<!--                                            <path d="M9.75 0V8.25H18V9.75H9.75V18H8.25V9.75H0V8.25H8.25V0H9.75Z"-->
+<!--                                                  fill="#003049"/>-->
+<!--                                        </svg>-->
+<!---->
+<!--                                        <span class="add-to-cart-shape">-->
+<!--                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">-->
+<!--                                            <path-->
+<!--                                                    d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"-->
+<!--                                                    stroke="black" stroke-width="0.5" stroke-linecap="round"-->
+<!--                                                    style="stroke-dasharray: 175.589;"/>-->
+<!--                                        </svg>-->
+<!--                                    </span>-->
+<!--                                    </input>-->
+<!---->
+<!--                                </form>-->
+<!--                            </div>-->
 
-                                <span class="add-to-cart-shape">
-                                        <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
-                                            <path
-                                                    d="M19.7633 4.96417C13.2213 5.21995 6.9549 10.3341 3.95998 17.4467C1.15216 22.7464 1.5814 25.6213 1.18499 31.287C0.863554 35.8811 2.70786 41.8047 7.18675 45.4259C13.3064 50.3736 25.1124 52.0743 33.124 49.7392C46.0595 45.969 51.2063 33.7643 51.1489 23.7338C51.1125 17.3612 49.4282 9.59193 43.0219 5.23087C37.0188 1.14431 28.4826 0.772365 22.8879 0.772461C16.8411 0.772565 10.327 3.44674 7.18675 7.01944"
-                                                    stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                    style="stroke-dasharray: 175.589;"/>
-                                        </svg>
+<!--                            todo: use a nicer form-->
 
-                                    </span>
-                            </a>
+                            <form action="" method="post">
+                                <input type="hidden" name="product_id" value=<?php echo $row['id'] ?>>
+                                <input type="hidden" name="product_name" value=<?php echo $row['name'] ?>>
+                                <input type="hidden" name="product_price" value=<?php echo $row['price'] ?>>
+                                <button type="submit" name="add_to_cart">Add To Cart</button>
+                            </form>
+
                         </div>
                     </div>
                 </div>

@@ -36,10 +36,22 @@ function db_connect(): mysqli
     return $conn;
 }
 
+/**
+ * @param $page_name
+ * @return void
+ */
 function redirect($page_name): void
 {
-    debug_log("/$page_name.html");
-    header("Location: /$page_name.html");
+    debug_log("/$page_name");
+    header("Location: /$page_name");
+}
+
+function get_product($id): false|array|null
+{
+    $conn = db_connect();
+    $sql = "SELECT id, name, category, description, url, price FROM products WHERE id='$id'";
+    $result = $conn->query($sql);
+    return $result->fetch_assoc();
 }
 
 ?>

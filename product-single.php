@@ -31,10 +31,7 @@
     $id = $_GET['id'];
 
     // get item from db using the id
-    $conn = db_connect();
-    $sql = "SELECT id, name, category, description, url, price FROM products WHERE id='$id'";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
+    $row = get_product($id);
     $id= $row['id'];
     $name = $row['name'];
     $category = $row['category'];

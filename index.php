@@ -23,14 +23,15 @@
 
     <!-- Main Style CSS Link -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </head>
 
 <body class="body-fixed">
 
-    <!-- Start of Page Loader-->
-    <div class="page-loader">
-        <div class="page-loader-content">
+<!-- Start of Page Loader-->
+<div class="page-loader">
+    <div class="page-loader-content">
             <img src="assets/images/logo.png" alt="Loader">
             <div class="loader">
                 <div class="loader-dot"></div>
@@ -221,9 +222,6 @@
                                 <span class="for-mob dropdown-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
                                 <ul class="sub-menu">
                                     <li><a title="Shop" href="shop.php">Shop</a></li>
-<!--                                    <li><a title="Product Single" href="product-single.html">Product Single</a></li>-->
-<!--                                    <li><a title="Categories" href="categories.html">Categories</a></li>-->
-<!--                                    <li><a title="Single Category" href="single-category.html">Single Category</a></li>-->
                                     <li><a title="Cart" href="cart.html">Cart</a></li>
                                     <li><a title="Checkout" href="checkout.html">Checkout</a></li>
                                 </ul>
@@ -272,9 +270,9 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="banner-text">
-                                        <h1 class="h1-title">Amarula Morula Delight</h1>
+                                        <h1 class="h1-title"><?php echo $single_product['name'] ?></h1>
                                         <div class="banner-btn">
-                                            <a href="product-single.php" title="Explore more" class="sec-btn">Explore more
+                                            <a href="product-single.php?id=<?php echo $single_product['id'] ?>" title="Explore more" class="sec-btn">Explore more
                                                 <svg width="30" height="15" viewBox="0 0 30 15" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -287,7 +285,7 @@
                                             </a>
 
                                             <h3 class="banner-bottle-price">
-                                                BWP480
+                                                BWP <?php echo $single_product['price'] ?>
                                                 <span class="underline-text"></span>
                                             </h3>
                                         </div>
