@@ -54,4 +54,11 @@ function get_product($id): false|array|null
     return $result->fetch_assoc();
 }
 
+function start_session(): void
+{
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}
+
 ?>

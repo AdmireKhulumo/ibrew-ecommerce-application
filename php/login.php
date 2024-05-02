@@ -1,6 +1,7 @@
 <?php
 include 'functions.php';
 debug_log("running login.php");
+start_session();
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-login'])){
     $email = $_POST["email"];
@@ -9,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-login'])){
     $conn = db_connect();
 
     // get the user with their email
-    $sql = "SELECT password FROM users WHERE email = '$email'";
+    $sql = "SELECT id, username, email, role, password  FROM users WHERE email = '$email'";
 
     $result = $conn->query($sql);
 
@@ -17,7 +18,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-login'])){
         echo "User not found.";
     }
     else {
-        $db_pass = $result->fetch_column();
+        $user = $result->fetch_assoc();
+        $db_pass = $user['password'];
         debug_log($db_pass);
 
         if($db_pass === FALSE){
@@ -30,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-login'])){
         else {
             debug_log("Password correct.");
             echo "Password okay";
-            // TODO: set the user session here
+            $_SESSION['user'] = $user;
             redirect("index.php");
         }
     }

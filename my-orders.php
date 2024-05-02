@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <?php
+    include __DIR__ . "/php/functions.php";
+    start_session();
+    ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>Ibrew Inc.</title>
@@ -25,66 +29,39 @@
 
     <!-- Main Style CSS Link -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <?php
-    include __DIR__ . "/php/functions.php";
-    start_session();
-    ?>
 
     <?php
+    $conn = db_connect();
+    $user_id = $_SESSION['user']['id'];
+    $sql = "
+        SELECT o.id AS order_id, oi.id AS item_id, o.status, o.shipping_address,o.payment_method,o.total_cost, o.delivery_method, oi.id, oi.quantity, p.name, p.price
+        FROM orders o
+        JOIN order_items oi ON o.id = oi.order_id
+        JOIN products p ON oi.product_id = p.id
+        WHERE o.user_id = $user_id";
+    $result = $conn->query($sql);
 
-    $id = $_GET['id'];
+    // group up the order according to the order id
+    $groupedOrders = [];
 
-    // get item from db using the id
-    $row = get_product($id);
-    $id = $row['id'];
-    $name = $row['name'];
-    $category = $row['category'];
-    $description = $row['description'];
-    $url = $row['url'];
-    $price = $row['price'];
-    ?>
-
-    <?php
-    debug_log("inside add to cart");
-
-    // Check if form data is submitted
-    if (isset($_POST['add_to_cart'])) {
-        // Get product details from form data
-        $quantity = intval($_POST['quantity']);
-        debug_log($quantity);
-
-        // Initialize cart if it doesn't exist in session
-        debug_log("session before");
-        debug_log($_SESSION);
-        if (!isset($_SESSION['cart_items'])) {
-            $_SESSION['cart_items'] = array();
+    // Group orders by order ID
+    foreach ($result as $orderDetail) {
+        $orderId = $orderDetail['order_id'];
+        if (!isset($groupedOrders[$orderId])) {
+            $groupedOrders[$orderId] = [];
         }
 
-        // Check if the product already exists in the cart
-        if (array_key_exists($id, $_SESSION['cart_items'])) {
-            // If product exists, increment the quantity
-            debug_log("product exists in cart");
-            $_SESSION['cart_items'][$id]['quantity'] += $quantity;
-        } else {
-            // If product doesn't exist, add it to the cart
-            debug_log("product not in cart");
-            $_SESSION['cart_items'][$id] = array(
-                'name' => "$name",
-                'url' => "$url",
-                'price' => floatval($price),
-                'quantity' => $quantity
-            );
-        }
-
-        debug_log("session after");
-        debug_log($_SESSION);
-        // Redirect back to the product display page after adding to cart
-//        redirect("cart.php");
-    } else {
-        // Redirect back to the product display page with an error message if form data is not set
-        $_SESSION['error_message'] = "Error: Form data is missing.";
+        // Add the current order detail to the grouped array
+        $groupedOrders[$orderId]['items'][] = $orderDetail;
+        $groupedOrders[$orderId]['total_cost'] = $orderDetail['total_cost'];
+        $groupedOrders[$orderId]['status'] = $orderDetail['status'];
+        $groupedOrders[$orderId]['status'] = $orderDetail['status'];
+        $groupedOrders[$orderId]['shipping_address'] = $orderDetail['shipping_address'];
+        $groupedOrders[$orderId]['payment_method'] = $orderDetail['payment_method'];
+        $groupedOrders[$orderId]['delivery_method'] = $orderDetail['delivery_method'];
     }
-    //        header("Location: ".$_SERVER['HTTP_REFERER']);
+
+
 
     ?>
 
@@ -154,13 +131,13 @@
         <ul>
             <li>
                 <div class="cart-sidebar-left">
-                    <a class="cart-sidebar-img" href="product-single.html"><img src="assets/images/drink-1.png"
-                                                                                alt="Drink bottle"></a>
+                    <a class="cart-sidebar-img" href="product-single.php"><img src="assets/images/drink-1.png"
+                                                                               alt="Wine Bottle"></a>
                 </div>
-                <!--                    <div class="cart-sidebar-right">-->
-                <!--                        <a title="Sangiovese Sierra Folia" href="product-single.php">Sangiovese Sierra Folia </a>-->
-                <!--                        <div class="cart-product-price"><span>1&nbsp;×</span><span>BWP480</span></div>-->
-                <!--                    </div>-->
+                <div class="cart-sidebar-right">
+                    <a title="Sangiovese Sierra Folia" href="product-single.php">Amarula Morula Delight</a>
+                    <div class="cart-product-price"><span>1&nbsp;×</span><span>BWP480</span></div>
+                </div>
                 <div class="product-remove">
                     <button type="button">
                         <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,11 +155,11 @@
             </li>
             <li>
                 <div class="cart-sidebar-left">
-                    <a class="cart-sidebar-img" href="product-single.html"><img src="assets/images/drink-2.png"
-                                                                                alt="Wine Bottle"></a>
+                    <a class="cart-sidebar-img" href="product-single.php"><img src="assets/images/drink-2.png"
+                                                                               alt="Wine Bottle"></a>
                 </div>
                 <div class="cart-sidebar-right">
-                    <a title="Mirassou Vineyards" href="product-single.html">Mirassou Vineyards</a>
+                    <a title="Mirassou Vineyards" href="product-single.php">Amarula Strawberry</a>
                     <div class="cart-product-price"><span>1&nbsp;×</span><span>BWP370</span></div>
                 </div>
                 <div class="product-remove">
@@ -211,7 +188,7 @@
 
         <div class="cart-sidebar-button-wp">
             <a href="cart.php" class="sec-btn golden-btn" title="view cart">view cart</a>
-            <a href="checkout.php" class="sec-btn" title="Checkout">Checkout</a>
+            <a href="checkout.html" class="sec-btn" title="Checkout">Checkout</a>
         </div>
     </div>
 </div>
@@ -221,47 +198,70 @@
 <?php include __DIR__."/main-header.php" ?>
 <!-- End of Header-->
 
-
-<!-- Start of Single Product Section-->
-<section class="single-product">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="product-left">
-                    <div class="swiper-container product-slider mb-3">
-                        <img src="<?php echo $url ?>" height="300px" width="300px" alt="Product Image">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="product-info">
-                    <div class="breadcrumb-wp">
-                        <ul class="breadcrumb justify-content-start">
-                            <li class="breadcrumb-item"><a href="index.php" title="Home">home</a></li>
-                            <li class="breadcrumb-item"><a href="shop.php" title="Shop">Shop</a></li>
-                            <li class="breadcrumb-item active"><?php echo $name ?></li>
-                        </ul>
-                    </div>
-                    <h1 class="h1-title"><?php echo $name ?></h1>
-                    <span class="posted_in">Category: <?php echo $category ?></span>
-                    <h3 class="product-price">BWP <?php echo $price ?></h3>
-                    <p> <?php echo $description ?> </p>
-                    <form class="product-info-cart" action="" method="post">
-                        <div class="quantity">
-                            <input type="number" class="input-text qty" step="1" min="1" name="quantity" value="1"
-                                   title="Qty" placeholder="">
-                            <button type="submit" name="add_to_cart" class="single_add_to_cart_button sec-btn">Add to
-                                cart
-                            </button>
+<!-- Start of Inner Banner Section-->
+<section class="inner-banner">
+    <div class="sec-wp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-banner-text text-center">
+                        <h1 class="h1-title">My Orders</h1>
+                        <div class="breadcrumb-wp">
+                            <ul class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.php" title="Home">Home</a></li>
+                                <li class="breadcrumb-item active">My Orders</li>
+                            </ul>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- End of Single Product Section-->
+<!-- End of Inner Banner Section-->
+
+<!-- Start of Checkout Section-->
+<section class="section checkout-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-box order-box light-bg">
+                    <?php foreach ($groupedOrders as $orderId => $orderItems)  { ?>
+                    <h2 class="md-title">Order # 000<?php echo $orderId ?> </h2>
+                    <h6 ><?php echo $orderItems['status'] ?> by <?php echo $orderItems['payment_method'] ?></h6>
+                    <table class="shop-table">
+                        <tbody>
+                        <?php foreach ($orderItems['items'] as $orderItem)   { ?>
+                            <tr class="cart-subtotal">
+                                <th>
+                                    <span> <?php echo $orderItem['name'] ?>  <b>&nbsp;×&nbsp; <?php echo $orderItem['quantity'] ?> </b></span>
+                                </th>
+                                <td data-title="Subtotal">
+                                        <span class="cart-subtotal-amount">
+                                            <span class="cart-amount-currencySymbol">BWP
+                                            </span> <?php echo number_format($orderItem['price'] * $orderItem['quantity'], 2, '.', '') ?>
+                                        </span>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        <tr class="order-total">
+                            <th>Total</th>
+                            <td data-title="total">
+                                    <span class="cart-amount"><span
+                                                class="cart-amount-currencySymbol">BWP</span><?php echo $orderItems['total_cost'] ?></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="font-size: medium"><i>Delivery via <?php echo $orderItems['delivery_method'] ?> to <?php echo $orderItems['shipping_address'] ?></i></p>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Checkout Section-->
 
 <!-- Start of Site Footer Section -->
 <footer class="site-footer dark-bg">
@@ -374,7 +374,6 @@
 
 <!-- Custom JS Link -->
 <script src="assets/js/custom.js"></script>
-
 </body>
 
 </html>

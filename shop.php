@@ -132,134 +132,15 @@
             </div>
 
             <div class="cart-sidebar-button-wp">
-                <a href="cart.html" class="sec-btn golden-btn" title="view cart">view cart</a>
-                <a href="checkout.html" class="sec-btn" title="Checkout">Checkout</a>
+                <a href="cart.php" class="sec-btn golden-btn" title="view cart">view cart</a>
+                <a href="checkout.php" class="sec-btn" title="Checkout">Checkout</a>
             </div>
         </div>
     </div>
     <!-- End of Cart Sidebar-->
 
     <!-- Start of Header-->
-    <header class="site-header">
-        <div class="header-main header-top fluid-section">
-            <div class="header-top-left">
-                <div class="header-list">
-                    <ul>
-                        <li><a href="https://facebook.com" target="_blank" title="Follow On Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.linkedin.com" target="_blank" title="Follow On Linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.instagram.com" target="_blank" title="Follow On Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="https://www.youtube.com" target="_blank" title="Follow On Youtube"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="header-top-right">
-                <div class="header-list">
-                    <ul>
-                        <li>
-                            <a href="login-register.html" title="Register">Register</a>
-                        </li>
-                        <li>
-                            <a href="login-register.html" title="Log In">Log In</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" title="My Cart" class="cart-sidebar-button">
-                                <img width="27" height="24" src="assets/images/cart-icon.svg" alt="Cart Icon">
-                                <span class="shopping-value">2</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="ani-line"></div>
-        <div class="header-main header-bottom fluid-section">
-            <div class="header-logo">
-                <a href="index.php" title="Home">
-                    <img src="assets/images/logo.png" alt="logo" class="header-logo-img">
-                </a>
-            </div>
-
-            <div class="main-navigation">
-                <button class="menu-toggle"><span></span><span></span></button>
-                <div class="header-menu">
-                    <nav>
-                        <ul class="menu">
-                            <li>
-                                <a class="round-shape-button header-active-menu" title="Home" href="index.php">Home
-                                    <span class="button-shape">
-                                    <svg width="62" height="36" viewBox="0 0 62 36" fill="none">
-                                        <path
-                                                d="M51.0232 4.78137C43.8399 4.78137 36.6567 4.78137 29.4735 4.78137C23.1773 4.78137 16.2376 4.08517 10.3663 6.8296C7.6938 8.0788 4.38645 10.1306 2.84649 12.782C1.48574 15.1248 0.988718 18.628 1.00019 21.3018C1.00994 23.5719 1.97437 25.3351 3.35614 27.0811C5.46795 29.7497 7.95463 32.4336 11.2606 33.5431C15.1621 34.8525 19.7135 34.9982 23.7711 35.0913C29.954 35.2332 36.1171 34.7828 42.2533 34.0528C46.1165 33.5932 50.5598 33.2245 54.2349 31.7065C57.4622 30.3735 62.0997 26.3314 61.6586 22.3981C61.0983 17.4025 57.2737 13.0321 53.8695 9.62789C50.8422 6.6005 47.4077 4.06244 43.2245 2.887C38.343 1.51534 33.0525 1.14648 28.0022 1.14648"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;"></path>
-                                    </svg>
-                                </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="round-shape-button" title="About" href="about.html">About
-                                    <span class="button-shape">
-                                    <svg width="62" height="36" viewBox="0 0 62 36" fill="none">
-                                        <path
-                                                d="M51.0232 4.78137C43.8399 4.78137 36.6567 4.78137 29.4735 4.78137C23.1773 4.78137 16.2376 4.08517 10.3663 6.8296C7.6938 8.0788 4.38645 10.1306 2.84649 12.782C1.48574 15.1248 0.988718 18.628 1.00019 21.3018C1.00994 23.5719 1.97437 25.3351 3.35614 27.0811C5.46795 29.7497 7.95463 32.4336 11.2606 33.5431C15.1621 34.8525 19.7135 34.9982 23.7711 35.0913C29.954 35.2332 36.1171 34.7828 42.2533 34.0528C46.1165 33.5932 50.5598 33.2245 54.2349 31.7065C57.4622 30.3735 62.0997 26.3314 61.6586 22.3981C61.0983 17.4025 57.2737 13.0321 53.8695 9.62789C50.8422 6.6005 47.4077 4.06244 43.2245 2.887C38.343 1.51534 33.0525 1.14648 28.0022 1.14648"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;"></path>
-                                    </svg>
-                                </span>
-                                </a>
-                            </li>
-                            <li class="dropdown-items">
-                                <a class="round-shape-button" title="Shop" href="javascript:void(0);">Shop
-                                    <span class="button-shape">
-                                    <svg width="62" height="36" viewBox="0 0 62 36" fill="none">
-                                        <path d="M51.0232 4.78137C43.8399 4.78137 36.6567 4.78137 29.4735 4.78137C23.1773 4.78137 16.2376 4.08517 10.3663 6.8296C7.6938 8.0788 4.38645 10.1306 2.84649 12.782C1.48574 15.1248 0.988718 18.628 1.00019 21.3018C1.00994 23.5719 1.97437 25.3351 3.35614 27.0811C5.46795 29.7497 7.95463 32.4336 11.2606 33.5431C15.1621 34.8525 19.7135 34.9982 23.7711 35.0913C29.954 35.2332 36.1171 34.7828 42.2533 34.0528C46.1165 33.5932 50.5598 33.2245 54.2349 31.7065C57.4622 30.3735 62.0997 26.3314 61.6586 22.3981C61.0983 17.4025 57.2737 13.0321 53.8695 9.62789C50.8422 6.6005 47.4077 4.06244 43.2245 2.887C38.343 1.51534 33.0525 1.14648 28.0022 1.14648"
-                                              stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                              style="stroke-dasharray: 175.589;"></path>
-                                    </svg>
-                                </span>
-                                </a>
-                                <span class="for-mob dropdown-icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
-                                <ul class="sub-menu">
-                                    <li><a title="Shop" href="shop.html">Shop</a></li>
-                                    <!--                                    <li><a title="Product Single" href="product-single.html">Product Single</a></li>-->
-                                    <!--                                    <li><a title="Categories" href="categories.html">Categories</a></li>-->
-                                    <!--                                    <li><a title="Single Category" href="single-category.html">Single Category</a></li>-->
-                                    <li><a title="Cart" href="cart.html">Cart</a></li>
-                                    <!--                                    <li><a title="Wishlist" href="wishlist-page.html">Wishlist</a></li>-->
-                                    <li><a title="Checkout" href="checkout.html">Checkout</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="round-shape-button" title="Contact" href="contact.html">Contact
-                                    <span class="button-shape">
-                                    <svg width="62" height="36" viewBox="0 0 62 36" fill="none">
-                                        <path
-                                                d="M51.0232 4.78137C43.8399 4.78137 36.6567 4.78137 29.4735 4.78137C23.1773 4.78137 16.2376 4.08517 10.3663 6.8296C7.6938 8.0788 4.38645 10.1306 2.84649 12.782C1.48574 15.1248 0.988718 18.628 1.00019 21.3018C1.00994 23.5719 1.97437 25.3351 3.35614 27.0811C5.46795 29.7497 7.95463 32.4336 11.2606 33.5431C15.1621 34.8525 19.7135 34.9982 23.7711 35.0913C29.954 35.2332 36.1171 34.7828 42.2533 34.0528C46.1165 33.5932 50.5598 33.2245 54.2349 31.7065C57.4622 30.3735 62.0997 26.3314 61.6586 22.3981C61.0983 17.4025 57.2737 13.0321 53.8695 9.62789C50.8422 6.6005 47.4077 4.06244 43.2245 2.887C38.343 1.51534 33.0525 1.14648 28.0022 1.14648"
-                                                stroke="black" stroke-width="0.5" stroke-linecap="round"
-                                                style="stroke-dasharray: 175.589;"></path>
-                                    </svg>
-                                </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <form class="search-form for-mob">
-                        <input type="search" placeholder="Search Your Morula Beverage Here..." class="form-input">
-                        <button type="submit"><img width="24" height="24" src="assets/images/search-icon.svg" alt="Search Icon"></button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="header-search">
-                <a href="javascript:void(0);" class="search-button">
-                    <img width="24" height="24" src="assets/images/search-icon.svg" alt="Search Icon">
-                </a>
-            </div>
-        </div>
-
-        <div class="ani-line header-bottom-line"></div>
-    </header>
+    <?php include __DIR__."/main-header.php" ?>
     <!-- End of Header-->
 
 
@@ -328,13 +209,13 @@
                                         <a title="Home" href="index.php">Home</a>
                                     </li>
                                     <li>
-                                        <a title="About" href="about.html">About</a>
+                                        <a title="About" href="about.php">About</a>
                                     </li>
                                     <li>
                                         <a title="Menu" href="shop.html">Shop</a>
                                     </li>
                                     <li>
-                                        <a title="Contact" href="contact.html">Contact</a>
+                                        <a title="Contact" href="contact.php">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -356,8 +237,8 @@
                         <div class="col-lg-6">
                             <div class="bottom-footer-right  white-list-link">
                                 <ul>
-                                    <li><a title="Terms" href="terms.html">terms</a></li>
-                                    <li><a title="Privacy Policy" href="privacy-policy.html">privacy policy</a></li>
+                                    <li><a title="Terms" href="terms.php">terms</a></li>
+                                    <li><a title="Privacy Policy" href="privacy-policy.php">privacy policy</a></li>
                                 </ul>
                             </div>
                         </div>

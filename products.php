@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    include __DIR__."/php/functions.php";
+    start_session();
+    ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>Ibrew Inc.</title>
@@ -26,7 +30,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <?php include __DIR__ . "/php/functions.php"; ?>
+
     <?php
 
     // connect to db
@@ -46,8 +50,6 @@
     ?>
 
     <?php
-
-    session_start();
     debug_log("inside add to cart");
 
     // Check if form data is submitted
@@ -56,6 +58,10 @@
         $product_id = $_POST['product_id'];
         $product_name = $_POST['product_name'];
         $product_price = $_POST['product_price'];
+        $product_url = $_POST['product_url'];
+        debug_log($product_id);
+        debug_log($product_name);
+        debug_log($product_price);
 
         // Initialize cart if it doesn't exist in session
         debug_log("session before");
@@ -73,7 +79,8 @@
             // If product doesn't exist, add it to the cart
             debug_log("product not in cart");
             $_SESSION['cart_items'][$product_id] = array(
-                'name' => $product_name,
+                'name' => "$product_name",
+                'url' => "$product_name",
                 'price' => floatval($product_price),
                 'quantity' => 1
             );
@@ -81,14 +88,12 @@
 
         debug_log("session after");
         debug_log($_SESSION);
-
         // Redirect back to the product display page after adding to cart
     } else {
         // Redirect back to the product display page with an error message if form data is not set
         $_SESSION['error_message'] = "Error: Form data is missing.";
     }
-    //    header("Location: ".$_SERVER['HTTP_REFERER']);
-    //    exit();
+//        header("Location: ".$_SERVER['HTTP_REFERER']);
 
     ?>
 
@@ -160,13 +165,8 @@
 <!--                            </div>-->
 
 <!--                            todo: use a nicer form-->
+<!---->
 
-                            <form action="" method="post">
-                                <input type="hidden" name="product_id" value=<?php echo $row['id'] ?>>
-                                <input type="hidden" name="product_name" value=<?php echo $row['name'] ?>>
-                                <input type="hidden" name="product_price" value=<?php echo $row['price'] ?>>
-                                <button type="submit" name="add_to_cart">Add To Cart</button>
-                            </form>
 
                         </div>
                     </div>
