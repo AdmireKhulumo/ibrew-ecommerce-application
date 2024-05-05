@@ -28,14 +28,14 @@
     <?php
     $env = parse_ini_file(__DIR__."/.env");
     $conn = new mysqli($env["db_servername"], $env["db_username"], $env["db_password"], $env["db_name"]);
-    $sql = "SELECT id, name, category, description, url, price FROM products WHERE id=1";
+    $sql = "SELECT id, name, category, description, url, price FROM products WHERE id=3";
     $result = $conn->query($sql);
     $single_product = $result->fetch_assoc();
     ?>
 
     <?php
     session_start();
-    $user = $_SESSION['user'];
+    $user = $_SESSION['user'] ?? '';
     ?>
 
 </head>

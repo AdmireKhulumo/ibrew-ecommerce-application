@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-register'])) {
         }
 
         // todo: redirect on success
+        redirect("index.php");
 
         // Close database connection
         $conn->close();
